@@ -47,6 +47,7 @@ if($login == "" || $login == null){
             window.location.href='index.php';</script>";
         }
     }else{
+        if ($operacao == 'Cadastrar') {
         // Se o usuário / senha não existem então
         // insere o usuário/senha na tabela usuarios
         $query = "INSERT INTO usuarios (login,senha) VALUES ('$login','$senha')";
@@ -62,6 +63,12 @@ if($login == "" || $login == null){
         }else{
             echo"<script language='javascript' type='text/javascript'>
             alert('Não foi possível cadastrar este usuário');window.location.href=
+            'cadastro.html';</script>";
+        }
+
+        } else {
+            echo"<script language='javascript' type='text/javascript'>
+            alert('Usuário não existe!');window.location.href=
             'cadastro.html';</script>";
         }
     }
